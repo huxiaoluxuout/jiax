@@ -456,15 +456,20 @@ def build_chains_text(data):
 
 # edgetunnel 入口地址池: 客户端直连 Cloudflare 的优选 IP:端口 (循环分配给每个国家节点当入口)
 # 可通过环境变量 EDGE_HOSTS 覆盖 (逗号分隔)
-EDGE_HOSTS = [
-    h.strip()
-    for h in os.environ.get(
-        "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
-    ).split(",")
-    if h.strip()
-]
+# EDGE_HOSTS = [
+#     h.strip()
+#     for h in os.environ.get(
+#         "EDGE_HOSTS",
+#         "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
+#         "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+#     ).split(",")
+#     if h.strip()
+# ]
+EDGE_HOSTS_DEFAULT = (
+    "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
+    "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443"
+)
+EDGE_HOSTS = [h.strip() for h in os.environ.get("EDGE_HOSTS", EDGE_HOSTS_DEFAULT).split(",") if h.strip()]
 
 HOSTS_URL = os.environ.get("HOSTS_URL", "https://jerylihub.github.io/gate/hosts.txt")
 
