@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://jiax.33446699.xyz/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,7 +460,7 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
+        "store.ubi.com:443,www.dbs.com.sg:443,stores.staples.com:443,ahrefs.com:443,openai.com:443,www.shopify.com:443,themeisle.com:443,s.bookcdn.com:443,www.mlkj888.com:443,linkvertise.com:443,chrono24.com:443,dash.domain.digitalplat.org:443,sci-hub.al:443,singapore.com:443,saas.sin.fan:443,form.assaabloy.com:443,img.imgdd.com:443,www.trumpgolf.com:443,rargb.to:443,qoj.ac:443,tracker.metricool.com:443,resources.biginterview.com:443,emos.best:443,login.rockwellautomation.com:443,pure.coupert.com:443",
         "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
     ).split(",")
     if h.strip()
@@ -522,8 +522,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
+EDT_UUID = os.environ.get("EDT_UUID", "75cfcb63-0645-4b2c-95be-3ff6e7d5463e")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "jiaxedgetunnel.33446699.xyz")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
